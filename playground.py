@@ -13,11 +13,11 @@ for data in os.listdir(dir1):
 
 # array Hashen
 def get_arrayHash(bla):
-    val = hashlib.md5(b's').hexdigest()
+    val = hashlib.md5(bla.encode()).hexdigest()
     return val
 
 
-string = "123"
+string = "1g23"
 print(get_arrayHash(string))
 
 #print(hashlib.sha224(b"Nobody inspects the spammish repetition!").hexdigest())

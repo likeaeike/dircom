@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import subprocess as sub
+import hashlib
 
 
 # Verzeichnisse 1 und 2 eingeben und als Rückgabe zurück geben
@@ -25,9 +26,11 @@ def get_dataHash(dir):
 # Array hashen
 
 def get_arrayHash(content):
-    for inhalt in content:
-        val = hashlib.md5(b'skb').hexdigest()
-        return val
+    #print(content)
+    for x in content:
+        x += hashlib.md5(content.encode()).hexdigest()
+        print(x)
+        return x
 
 
 
@@ -44,8 +47,9 @@ def main():
     #counter = 0 IN get_directory EINGABE VERSCHÖNERN
     dir1 = get_directory(dir)
     dir2 = get_directory(dir)
-    content1 = get_dataHash(dir1)
+    content1 = get_arrayHash(dir1)
     content2 = get_dataHash(dir2)
+    #print(content1)
     #get_arrayHash()
     #compareHash()
 
