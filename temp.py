@@ -32,7 +32,7 @@ def get_arrayHash(content):
         hashlib.md5().update(bytes(elem))
         #print(hashlib.md5().hexdigest())
         rueckgabe += hashlib.md5().hexdigest()
-    #print(rueckgabe)
+    print(rueckgabe)
     return rueckgabe
 
 
@@ -51,6 +51,7 @@ def main():
     dir2 = get_directory(dir)
     dataArray1 = get_dataArray(dir1)
     dataArray2 = get_dataArray(dir2)
+    print(dataArray1)
     content1 = get_arrayHash(dataArray1)
     content2 = get_arrayHash(dataArray2)
     #compareHash()

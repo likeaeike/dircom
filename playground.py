@@ -1,23 +1,40 @@
-import os
 import hashlib
+m = hashlib.md5()
+
+list = ['MacOS', 'Install GitKraken']
+
+def get_arrayHash(list):
+    #m = hashlib.md5()
+    list = list.strip()
+    rueckgabe = ""
+    for elem in list:
+        var = hashlib.md5(list)
+        print (var)
+    #return rueckgabe
+
+new = get_arrayHash(list)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 '''
-dir1 = input("Verzeichnis 1: ")
-
-for data in os.listdir(dir1):
-    print(data)
+def encrypt_string(hash_string):
+    sha_signature = \
+        hashlib.md5(hash_string.encode().hexdigest())
+    return sha_signature
 '''
-
-# aktuelles Verzeicnis ausgeben
-#print(os.getcwd())
-
-
-# array Hashen
-def get_arrayHash(bla):
-    val = hashlib.md5(bla.encode()).hexdigest()
-    return val
-
-
-string = "1g23"
-print(get_arrayHash(string))
-
-#print(hashlib.sha224(b"Nobody inspects the spammish repetition!").hexdigest())
