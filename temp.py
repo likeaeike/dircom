@@ -14,24 +14,26 @@ def get_directory(dir):
     '''
 
 # in for-Schleife jede (nicht Versteckte?) Datei Hashen und in Array schreiben
-def get_dataHash(dir):
+def get_dataArray(dir):
     files = []
     # for-Schleife in Funktion auslagern, weil zwei mal benötigt!
     for datei in os.listdir(dir):
                 #os.listdir(PFAD)
         files.append(datei)
     return files
-    #print(files)
+
 
 # Array hashen
 
 def get_arrayHash(content):
-    #print(content)
-    for x in content:
-        x += hashlib.md5(content.encode()).hexdigest()
-        print(x)
-        return x
-
+    rueckgabe = ""
+    for elem in content:
+        elem = elem.encode("utf-8")
+        hashlib.md5().update(bytes(elem))
+        #print(hashlib.md5().hexdigest())
+        rueckgabe += hashlib.md5().hexdigest()
+    #print(rueckgabe)
+    return rueckgabe
 
 
 # Hashes vergleichen mit Ausgabe
@@ -47,10 +49,10 @@ def main():
     #counter = 0 IN get_directory EINGABE VERSCHÖNERN
     dir1 = get_directory(dir)
     dir2 = get_directory(dir)
-    content1 = get_arrayHash(dir1)
-    content2 = get_dataHash(dir2)
-    #print(content1)
-    #get_arrayHash()
+    dataArray1 = get_dataArray(dir1)
+    dataArray2 = get_dataArray(dir2)
+    content1 = get_arrayHash(dataArray1)
+    content2 = get_arrayHash(dataArray2)
     #compareHash()
 
 
