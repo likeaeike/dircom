@@ -1,8 +1,9 @@
 import hashlib
 m = hashlib.md5()
 
-list = ['MacOS', 'Install GitKraken']
-
+list = ['eike', 'eike', 'eike', 'eike']
+ergebnis = ""
+'''
 def get_arrayHash(list):
     #m = hashlib.md5()
     list = list.strip()
@@ -13,28 +14,11 @@ def get_arrayHash(list):
     #return rueckgabe
 
 new = get_arrayHash(list)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 '''
-def encrypt_string(hash_string):
-    sha_signature = \
-        hashlib.md5(hash_string.encode().hexdigest())
-    return sha_signature
-'''
+for elem in list:
+        print(elem)
+        elem = elem.encode("utf-8")
+        m.update(bytes(elem))
+        ergebnis += m.hexdigest()
+        #ergebnis += var
+        print (ergebnis)
