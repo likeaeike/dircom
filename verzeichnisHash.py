@@ -4,13 +4,13 @@ import subprocess as sub
 import hashlib
 
 
-# Verzeichnisse 1 und 2 eingeben und als Rückgabe zurück geben
+# Verzeichnisse 1 und 2 eingeben und als Rueckgabe zurueck geben
 def get_directory(dir):
     dir = input("Ersten Verzeichnispfad eingeben: ")
     return dir
 
     '''
-    rückgabe aus get_directory ausgeben und mit get_dataHash fortfahren!
+    rueckgabe aus get_directory ausgeben und mit get_dataHash fortfahren!
     '''
 
 # in for-Schleife jede (nicht Versteckte?) Datei Hashen und in Array schreiben
